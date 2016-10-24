@@ -1,4 +1,9 @@
-
+/**
+ * Pager.js
+ * simple table paging with jquery.
+ * usage: see readme
+ * 
+ **/
 class Pager {
   constructor( max_rows_id, table_body_id, paging_div, row_count, getPageData){
     this.maxRowsClicked = this.maxRowsClicked.bind(this);
