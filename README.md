@@ -29,8 +29,8 @@ where:
 * display_rows how many rows to display in table (from max_rows_droplist)
 * offset mysql limit offset for first row of paged data required
 * total_rows total number of table data rows
-* callback( array_of_objects) pass data back to pager
-    * array_of_object object with all col data for a row 
+* callback( array_of_arrays) pass data back to pager
+    * array_of_arrays with all col data for a row 
 
 ## Template
 

@@ -36,11 +36,9 @@ class Pager {
     this.table_body.empty();
     rows.forEach( function( row){
       let cols= "<tr>";
-      for( let prop in row){
-        if( row.hasOwnProperty( prop)){
-          cols += "<td>"+row[prop]+"</td>";
-        }
-      }
+      row.forEach( function( column_value){
+        cols += "<td>"+column_value+"</td>";
+      });
       cols += "</tr>";
       that.table_body.append( $(cols));
     });

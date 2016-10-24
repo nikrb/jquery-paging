@@ -69,7 +69,7 @@
   function getPageData( display_rows, offset, total_rows, callback){
     let pd = [];
     for( var i=offset; i < (offset+display_rows) && i<total_rows; i++){
-      pd.push( { id: data[i].id, name: data[i].first_name, email: data[i].email});
+      pd.push( [data[i].id, data[i].first_name, data[i].email]);
     }
     callback( pd);
   }
