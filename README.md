@@ -68,3 +68,36 @@ where:
   </script>
 ```
 
+Styling
+-------
+
+```
+<style>
+  #max_rows_wrapper {
+    text-align: right;
+  }
+  #paging_wrapper {
+    text-align: center;
+  }
+  .table-container {
+    margin: 10px auto;
+    width: 50%;
+  }
+  .my-table {
+    width: 100%;
+    margin: 20px;
+    border-collapse: collapse;
+  }
+  .my-table td, .my-table th {
+    border: 1px solid #88a;
+  }
+  .btn {
+    cursor: pointer;
+    line-height: 1.5em;
+    background-color: #88c;
+    border-radius: 5px;
+  }
+</style>
+
+```
+
