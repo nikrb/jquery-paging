@@ -15,7 +15,7 @@ class Pager {
     this.getPageData = getPageData;
     this.page_no = 1;
     this.total_rows = row_count;
-    this.max_rows.click( this.maxRowsClicked);
+    this.max_rows.change( this.maxRowsClicked);
     this.changePage( 1);
   }
   maxRowsClicked( e){
