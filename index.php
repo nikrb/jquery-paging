@@ -56,7 +56,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src=/rets/rets2/paging/modules/Pager.js></script>
+<script src="modules/Pager.js"></script>
 
 <script>
   var pager = 0;
