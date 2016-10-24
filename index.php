@@ -98,33 +98,7 @@
     {"id":19,"first_name":"Charles","last_name":"Fuller","email":"cfulleri@over-blog.com","gender":"Male","ip_address":"179.228.86.143"},
     {"id":20,"first_name":"Alan","last_name":"Williams","email":"awilliamsj@home.pl","gender":"Male","ip_address":"208.177.203.210"}
   ];
-  /*
-    function enablePagerButtons( page_no, max_rows){
-    let buttons = $('.btn');
-    $.each( buttons, function( ndx, ele){
-      const blabel = ele.value;
-      const n = parseInt( ele.value, 10);
-      switch( blabel){
-        case 'first_page':
-          $(ele).attr( 'disabled', page_no === 1);
-          break;
-        case 'prev_page':
-          $(ele).attr( 'disabled', page_no === 1);
-          break;
-        case 'next_page':
-          $(ele).attr( 'disabled', page_no === Math.ceil(total_rows/max_rows));
-          break;
-        case 'last_page':
-          $(ele).attr( 'disabled', page_no === Math.ceil( total_rows/max_rows));
-          break;
-        default:
-          $(ele).attr( 'disabled', page_no === n);
-          break;
-      }
-    });
-  }
 
-  */
 </script>
 </body>
 </html>
