@@ -51,7 +51,6 @@
     </table>
   </div>
   <div id='paging_wrapper'>
-    
   </div>
 </div>
 
