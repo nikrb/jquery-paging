@@ -17,11 +17,14 @@ class Pager {
     this.changePage( 1);
   }
   changePage( pageno){
+    const that = this;
     this.page_no = pageno;
     const max_rows = parseInt( this.max_rows.val(), 10);
-    let rows = this.getPageData( max_rows, (this.page_no-1)*max_rows, this.total_rows );
-    this.displayTable( rows);
-    this.setPagerButtons();
+    this.getPageData( max_rows, (this.page_no-1)*max_rows, 
+      this.total_rows, function( rows){
+        that.displayTable( rows);
+        that.setPagerButtons();
+      });
   }
   displayTable( rows){
     const that = this;

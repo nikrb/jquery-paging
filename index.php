@@ -67,13 +67,12 @@
     pager = new Pager( "max_rows_droplist", "table_body", "paging_wrapper", data.length, getPageData);
   });
   
-  function getPageData( display_rows, offset, total_rows){
-    console.log( "getpagedata display[%d] offset[%d] total[%d]", display_rows, offset, total_rows);
+  function getPageData( display_rows, offset, total_rows, callback){
     let pd = [];
     for( var i=offset; i < (offset+display_rows) && i<total_rows; i++){
       pd.push( { id: data[i].id, name: data[i].first_name, email: data[i].email});
     }
-    return pd;
+    callback( pd);
   }
   
   data = [
