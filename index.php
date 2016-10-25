@@ -59,19 +59,17 @@
 
 <script>
   var pager = 0;
-  var data = [],
-      page_no = 1,
-      total_rows = 0;
+  var data = [];
   $(document).ready( function( $){
-    pager = new Pager( "max_rows_droplist", "table_body", "paging_wrapper", data.length, getPageData);
+    pager = new Pager( "max_rows_droplist", "table_body", "paging_wrapper", getPageData);
   });
   
-  function getPageData( display_rows, offset, total_rows, callback){
+  function getPageData( display_rows, offset, callback){
     let pd = [];
-    for( var i=offset; i < (offset+display_rows) && i<total_rows; i++){
+    for( var i=offset; i < (offset+display_rows) && i<data.length; i++){
       pd.push( [data[i].id, data[i].first_name, data[i].email]);
     }
-    callback( pd);
+    callback( { total_rows: data.length, data:pd});
   }
   
   data = [

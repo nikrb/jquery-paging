@@ -5,7 +5,7 @@
  * 
  **/
 class Pager {
-  constructor( max_rows_id, table_body_id, paging_div, row_count, getPageData){
+  constructor( max_rows_id, table_body_id, paging_div, getPageData){
     this.maxRowsClicked = this.maxRowsClicked.bind(this);
     this.changePage = this.changePage.bind(this);
     this.pageClicked = this.pageClicked.bind(this);
@@ -14,7 +14,7 @@ class Pager {
     this.paging = $('#'+paging_div);
     this.getPageData = getPageData;
     this.page_no = 1;
-    this.total_rows = row_count;
+    this.total_rows = 0;
     this.max_rows.change( this.maxRowsClicked);
     this.changePage( 1);
   }
@@ -26,7 +26,9 @@ class Pager {
     this.page_no = pageno;
     const max_rows = parseInt( this.max_rows.val(), 10);
     this.getPageData( max_rows, (this.page_no-1)*max_rows, 
-      this.total_rows, function( rows){
+      function( payload){
+        const rows = payload.data;
+        that.total_rows = payload.total_rows;
         that.displayTable( rows);
         that.setPagerButtons();
       });
