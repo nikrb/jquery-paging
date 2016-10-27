@@ -2,7 +2,7 @@
  * Pager.js
  * simple table paging with jquery.
  * usage: see readme
- * 
+ *
  **/
 class Pager {
   constructor( max_rows_id, table_body_id, paging_div, getPageData){
@@ -22,10 +22,11 @@ class Pager {
     this.changePage( 1);
   }
   changePage( pageno){
+    console.log( "@Pager.changePage");
     const that = this;
     this.page_no = pageno;
     const max_rows = parseInt( this.max_rows.val(), 10);
-    this.getPageData( max_rows, (this.page_no-1)*max_rows, 
+    this.getPageData( max_rows, (this.page_no-1)*max_rows,
       function( payload){
         const rows = payload.data;
         that.total_rows = payload.total_rows;
@@ -62,7 +63,7 @@ class Pager {
         if( start_page < 1) start_page = 1;
       }
     }
-    $('button').off();
+    $('.btn').off();
     this.paging.empty();
     let dsbld = this.page_no === 1?"disabled":"";
     this.paging.append( "<button class='btn' id='first_page' value='first_page' "+dsbld+"><<</button>");
@@ -77,7 +78,7 @@ class Pager {
     dsbld = ( this.page_no === Math.ceil( this.total_rows/max_rows))?"disabled":"";
     this.paging.append( "<button class='btn' value='next_page' "+dsbld+">></button>");
     this.paging.append( "<button class='btn' value='last_page' "+dsbld+">>></button>");
-    $('button').on( 'click', this.pageClicked);
+    $('.btn').on( 'click', this.pageClicked);
   }
   pageClicked( e){
     const btn = $(e.target).attr( 'value');
@@ -104,4 +105,3 @@ class Pager {
   }
 
 }
-
